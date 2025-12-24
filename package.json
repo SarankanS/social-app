@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "faker": "^6.6.6",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.16.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.16.2",
+    "pg": "^8.16.3"
+  }
+}
