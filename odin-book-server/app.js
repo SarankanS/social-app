@@ -3,17 +3,25 @@ const express = require("express");
 const path = require('path');
 const cors = require('cors');
 
-const app = express();
 
 
-require('dotenv').config();
+// const authRoutes = require('./routes/auth'); 
+// const userRoutes = require('./routes/users');
+const postRoutes = require('./routes/postRoutes');
+
+const app = express();  
 
 
 // Middleware
 app.use(cors());
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Routes
+// app.use('/api/auth', authRoutes);
+// app.use('/api/users', userRoutes);
+app.use('/api/posts', postRoutes);
 
 
 const PORT = process.env.PORT || 3000;
