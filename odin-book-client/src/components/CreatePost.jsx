@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export function CreatePost(){
+export function CreatePost({onPostCreated}){
     const [authorId, setAuthorId] = useState('');
     const [content, setContent] = useState('');
 
@@ -20,6 +20,7 @@ export function CreatePost(){
                 throw new Error('Failed to create post');
             }
             const newPost = await res.json();
+            onPostCreated(newPost);
             console.log(newPost);
             setContent('');
         }catch(err){
